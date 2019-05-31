@@ -1,0 +1,7 @@
+{
+  "name": "opendj-web",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

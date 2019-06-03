@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EnvServiceProvider } from './provider/env.service.provider';
 import { EnvService } from './provider/env.service';
+import { EventService } from './provider/event.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { EnvService } from './provider/env.service';
     StatusBar,
     SplashScreen,
     EnvServiceProvider,
+    EventService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: APP_INITIALIZER,
@@ -40,4 +42,4 @@ import { EnvService } from './provider/env.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

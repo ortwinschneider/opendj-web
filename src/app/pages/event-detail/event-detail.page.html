@@ -1,24 +1,37 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      OpenDJ Events
-    </ion-title>
+    <ion-title>{{event.title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button expand="block" fill="solid" color="primary">Join</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="musical-notes"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="people"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Actions</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
-
   <ion-grid>
     <ion-row>
 
-      <ion-col *ngFor="let event of events" sizeXL="4" sizeSM="12">
+      <ion-col sizeXL="4" sizeSM="12">
         <ion-card class="welcome-card" color="medium">
-          <div style="position: absolute; top: 20px; right: 20px;">
-            <ion-button size="small" color="primary" [routerLink]="['/event-detail', event.id]" >Details</ion-button>
-          </div>
           <ion-img src="{{event.imgUrl}}"></ion-img>
           <ion-card-header>
             <ion-card-subtitle>{{event.motto}}</ion-card-subtitle>
@@ -38,12 +51,11 @@
               <ion-label>{{event.city}}</ion-label>
             </ion-chip>
             <p>{{event.description}}</p>
-            <ion-button expand="block" fill="outline" color="light">Join Event</ion-button>
           </ion-card-content>
         </ion-card>
+
       </ion-col>
 
     </ion-row>
   </ion-grid>
-
 </ion-content>

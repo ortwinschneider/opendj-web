@@ -9,7 +9,7 @@
 
 <ion-content color="light">
 
-  <ion-grid style="padding: 10px; margin: 20px; border: 1px solid #bbb; border-radius: 10px; background-color: #fff;">
+  <ion-grid class="event-detail">
     <ion-row style="border-bottom: 1px solid #bbb;">
       <ion-col size="8">
         <ion-img src="{{event.imgUrl}}"></ion-img>
@@ -32,7 +32,7 @@
         </ion-button>
       </ion-col>
       <ion-col size="4">
-        <ion-button expand="block">Join Event</ion-button>
+        <ion-button expand="block" (click)="join()">Join Event</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>

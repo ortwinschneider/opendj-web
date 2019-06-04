@@ -5,8 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EventDetailPage } from './event-detail.page';
-import { EventDetailPopoverComponent } from '../event-detail-popover/event-detail-popover.component';
+import { EventDetailPage, EventDetailModalComponent, EventDetailPopoverComponent } from './event-detail.page';
 
 const routes: Routes = [
   {
@@ -22,7 +21,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EventDetailPage, EventDetailPopoverComponent],
-  entryComponents: [EventDetailPopoverComponent]
+  declarations: [EventDetailPage, EventDetailPopoverComponent, EventDetailModalComponent],
+  entryComponents: [EventDetailPopoverComponent, EventDetailModalComponent]
 })
 export class EventDetailPageModule {}

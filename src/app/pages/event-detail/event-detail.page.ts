@@ -1,8 +1,6 @@
-import { MusicEvent } from './../../models/music-event';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PopoverController, ToastController, ModalController } from '@ionic/angular';
-import { map } from 'rxjs/operators';
 import { EventService } from 'src/app/provider/event.service';
 
 @Component({
@@ -60,6 +58,7 @@ export class EventDetailPage implements OnInit {
     const id = this.route.snapshot.params.id;
     this.eventService.getEvents()
       .subscribe(data => {
+        // tslint:disable-next-line:triple-equals
         this.event = data.events.find(obj => obj.id == id);
       });
   }

@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { ListPage } from './list.page';
-import { PlaylistAddPage } from '../playlist-add/playlist-add.page';
+import { ListPage, PlaylistAddModalComponent } from './list.page';
 
 @NgModule({
   imports: [
@@ -19,7 +18,7 @@ import { PlaylistAddPage } from '../playlist-add/playlist-add.page';
       }
     ])
   ],
-  declarations: [ListPage, PlaylistAddPage],
-  entryComponents: [PlaylistAddPage]
+  declarations: [ListPage, PlaylistAddModalComponent],
+  entryComponents: [PlaylistAddModalComponent]
 })
 export class ListPageModule {}

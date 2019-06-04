@@ -1,5 +1,5 @@
 import { KeycloakService } from 'keycloak-angular';
-import { EnvService } from '../provider/env.service';
+import { EnvService } from '../providers/env.service';
 
 export function initializer(keycloak: KeycloakService, envService: EnvService): () => Promise<any> {
   return (): Promise<any> => {

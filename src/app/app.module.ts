@@ -12,9 +12,9 @@ import { initializer } from './utils/app-init';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { EnvServiceProvider } from './provider/env.service.provider';
-import { EnvService } from './provider/env.service';
-import { EventService } from './provider/event.service';
+import { EnvServiceProvider } from './providers/env.service.provider';
+import { EnvService } from './providers/env.service';
+import { EventService } from './providers/event.service';
 
 @NgModule({
   declarations: [AppComponent],

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
-import { UserData } from '../../provider/user-data';
+import { UserData } from '../../providers/user-data';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
     public userData: UserData
   ) { }
 
-  onLogin(){
+  onLogin() {
     this.router.navigateByUrl('/home');
   }
   /*

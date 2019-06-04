@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PopoverController, ToastController, ModalController } from '@ionic/angular';
-import { EventService } from 'src/app/provider/event.service';
+import { EventService } from 'src/app/providers/event.service';
 
 @Component({
   selector: 'app-event-detail',

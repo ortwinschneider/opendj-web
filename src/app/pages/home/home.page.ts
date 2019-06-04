@@ -1,7 +1,7 @@
 import { MusicEvent } from './../../models/music-event';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventService } from '../../provider/event.service';
+import { EventService } from '../../providers/event.service';
 
 
 @Component({

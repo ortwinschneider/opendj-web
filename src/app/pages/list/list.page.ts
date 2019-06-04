@@ -111,12 +111,14 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+
 }
 
+
+/**
+ * Add to playlist modal
+ * Search for songs and add to current playlist.
+ */
 @Component({
   selector: 'app-playlist-add-modal',
   template: `

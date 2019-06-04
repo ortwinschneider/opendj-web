@@ -4,10 +4,10 @@ import { Events, MenuController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { UserData } from './provider/user-data';
+import { UserData } from './providers/user-data';
 import { KeycloakProfile } from 'keycloak-js';
 import { KeycloakService } from 'keycloak-angular';
-import { EnvService } from './provider/env.service';
+import { EnvService } from './providers/env.service';
 
 @Component({
   selector: 'app-root',
@@ -25,14 +25,14 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
+      title: 'New Event',
+      url: '/event-create',
+      icon: 'add'
+    },
+    {
       title: 'Playlist',
       url: '/list',
       icon: 'play-circle'
-    },
-    {
-      title: 'My Events',
-      url: '/events',
-      icon: 'wine'
     }
   ];
 

@@ -4,29 +4,70 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>{{event.title}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button expand="block" fill="solid" color="primary">Join</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-buttons slot="secondary">
-      <ion-button>
-        <ion-icon slot="icon-only" name="musical-notes"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon slot="icon-only" name="people"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Actions</ion-title>
-    <ion-buttons slot="primary">
-      <ion-button (click)="presentPopover($event)">
-        <ion-icon slot="icon-only" name="settings"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
+
+  <ion-grid style="padding: 10px; margin: 20px; border: 1px solid #bbb; border-radius: 10px; background-color: #fff;">
+    <ion-row style="border-bottom: 1px solid #bbb;">
+      <ion-col size="8">
+        <ion-img src="{{event.imgUrl}}"></ion-img>
+      </ion-col>
+      <ion-col size="4">
+        <h1>{{event.title}}</h1>
+        <h3>{{event.motto}}</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row style="border-bottom: 1px solid #bbb;">
+      <ion-col size="8">
+        <ion-button fill="outline">
+          <ion-icon slot="icon-only" name="musical-notes"></ion-icon>
+        </ion-button>
+        <ion-button fill="outline">
+          <ion-icon slot="icon-only" name="share"></ion-icon>
+        </ion-button>
+        <ion-button (click)="presentPopover($event)" fill="outline">
+          <ion-icon slot="icon-only" name="settings"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block">Join Event</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" style="padding: 20px;">
+        <h2>Description</h2>
+        <p>{{event.description}}</p>
+        <ion-chip *ngIf="event.isPublic">
+          <ion-icon name="calendar" color="secondary"></ion-icon>
+          <ion-label>Öffentlich</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="!event.isPublic">
+          <ion-icon name="calendar" color="secondary"></ion-icon>
+          <ion-label>Privat</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-icon name="people" color="dark"></ion-icon>
+          <ion-label>{{event.maxParticipants}} participants</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-icon name="map" color="dark"></ion-icon>
+          <ion-label>{{event.city}}</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="4">
+        <h3>Date and Time</h3>
+        <p>{{event.startDate}}</p>
+        <p>{{event.startTime}}</p>
+        <h3>Location</h3>
+        <p>{{event.street}}</p>
+        <p>{{event.city}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--
   <ion-grid>
     <ion-row>
 
@@ -58,4 +99,5 @@
 
     </ion-row>
   </ion-grid>
+  -->
 </ion-content>

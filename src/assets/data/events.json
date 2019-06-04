@@ -32,7 +32,7 @@
             "city": "Frankfurt",
             "startDate": "2019-08-26",
             "startTime": "20:15 CET",
-            "isPublic": true,
+            "isPublic": false,
             "isDuplicateTracksAllowed": true,
             "isMultipleCuratorAllowed": true,
             "musicProvider": "spotify",

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ActionSheetController, ToastController } from '@ionic/angular';
+import { WebsocketService } from 'src/app/providers/websocket.service';
 
 @Component({
   selector: 'app-list',
@@ -25,7 +26,8 @@ export class ListPage implements OnInit {
   constructor(
     public modalController: ModalController,
     public actionSheetController: ActionSheetController,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public websocketService: WebsocketService
     ) {
     for (let i = 1; i < 26; i++) {
       this.items.push({
@@ -42,6 +44,7 @@ export class ListPage implements OnInit {
     this.items.splice(event.detail.to, 0, draggedItem);
     // this.listItems = reorderArray(this.listItems, event.detail.from, event.detail.to);
     event.detail.complete();
+    this.websocketService.updatePlaylist(this.items);
   }
 
   async presentModal() {
@@ -110,6 +113,10 @@ export class ListPage implements OnInit {
   }
 
   ngOnInit() {
+    this.websocketService.getPlaylist().subscribe(data => {
+      console.log(data);
+      this.items = data;
+    });
   }
 
 }

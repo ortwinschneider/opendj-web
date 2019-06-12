@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { EnvServiceProvider } from './providers/env.service.provider';
 import { EnvService } from './providers/env.service';
 import { EventService } from './providers/event.service';
+import { WebsocketService } from './providers/websocket.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { EventService } from './providers/event.service';
     SplashScreen,
     EnvServiceProvider,
     EventService,
+    WebsocketService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: APP_INITIALIZER,

@@ -21,7 +21,7 @@ export class ListPage implements OnInit {
     'bluetooth',
     'build'
   ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
+  public items: any = [];
 
   constructor(
     public modalController: ModalController,
@@ -110,6 +110,10 @@ export class ListPage implements OnInit {
         }]
     });
     await actionSheet.present();
+  }
+
+  trackElement(index: number, element: any) {
+    return element ? element.title : null;
   }
 
   ngOnInit() {

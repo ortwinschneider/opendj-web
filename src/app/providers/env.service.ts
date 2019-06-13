@@ -15,8 +15,9 @@ export class EnvService {
   public ssoRealm = '';
   public ssoClientId = '';
   public ssoClientCredentials = '';
-
   public ssoLogoutRedirectUrl = '';
+
+  public websocketUrl = '';
 
   constructor() { }
 }

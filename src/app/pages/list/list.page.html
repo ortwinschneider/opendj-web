@@ -48,7 +48,7 @@
         <ion-list color="light">
           <ion-reorder-group (ionItemReorder)="onRenderItems($event)" disabled="false">
 
-            <ion-item-sliding *ngFor="let item of items">
+            <ion-item-sliding *ngFor="let item of items; trackBy: trackElement">
 
               <ion-item color="light" (click)="presentActionSheet(item.title)">
                 <ion-thumbnail slot="start">

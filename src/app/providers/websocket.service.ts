@@ -3,6 +3,7 @@ import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
 import * as Rx from 'rxjs';
 import { environment } from '../../environments/environment';
+import { EnvService } from './env.service';
 
 @Injectable()
 export class WebsocketService {
@@ -10,8 +11,8 @@ export class WebsocketService {
     // Our socket connection
     private socket;
 
-    constructor() {
-        this.socket = io(environment.ws_url, {
+    constructor(private envService: EnvService) {
+        this.socket = io(envService.websocketUrl, {
             reconnectionAttempts: 10
         });
     }

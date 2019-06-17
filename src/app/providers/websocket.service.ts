@@ -19,8 +19,8 @@ export class WebsocketService {
 
     getPlaylist() {
         const observable = new Observable(observer => {
-            this.socket.on('playlist', (data) => {
-                console.log('Received playlist update Websocket Server');
+            this.socket.on('current-playlist', (data) => {
+                console.log('Received playlist update from Websocket Server');
                 observer.next(data);
             });
         });
@@ -28,7 +28,7 @@ export class WebsocketService {
     }
 
     updatePlaylist(playlist) {
-        this.socket.emit('playlist', playlist);
+        this.socket.emit('update-playlist', playlist);
     }
 
 }

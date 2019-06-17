@@ -29,7 +29,7 @@ export class ListPage implements OnInit {
     public toastController: ToastController,
     public websocketService: WebsocketService
     ) {
-    for (let i = 1; i < 26; i++) {
+    for (let i = 1; i < 11; i++) {
       this.items.push({
         title: 'Track ' + i,
         note: 'This is track #' + i,
@@ -118,7 +118,7 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
     this.websocketService.getPlaylist().subscribe(data => {
-      console.log(data);
+      console.log(JSON.stringify(data));
       this.items = data;
     });
   }
